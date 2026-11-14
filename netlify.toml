@@ -6,6 +6,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # The DB name ("taskflow") is not a secret and appears in normal files.
+  SECRETS_SCAN_OMIT_KEYS = "MONGODB_DB_NAME"
 
 [functions]
   node_bundler = "esbuild"
