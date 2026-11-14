@@ -11,8 +11,9 @@
 
 [functions]
   node_bundler = "esbuild"
-  # Keep these as real node_modules instead of bundling them (more reliable).
-  external_node_modules = ["firebase-admin", "mongodb"]
+  # firebase-admin is bundled so esbuild converts its ESM-only deps (jose) to CommonJS.
+  # mongodb stays external because it has optional native deps that shouldn't be bundled.
+  external_node_modules = ["mongodb"]
 
 # Send every /api/* request to the single Express function.
 [[redirects]]
