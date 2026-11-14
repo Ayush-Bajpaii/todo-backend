@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*serviceAccount*.json
+*firebase-adminsdk*.json
+
+# Netlify
+.netlify/
+
+# Logs / OS
+npm-debug.log*
+*.log
+.DS_Store

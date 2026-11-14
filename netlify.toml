@@ -1,0 +1,24 @@
+[build]
+  # No build step is needed – Netlify only bundles the function.
+  command = ""
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+  # Keep these as real node_modules instead of bundling them (more reliable).
+  external_node_modules = ["firebase-admin", "mongodb"]
+
+# Send every /api/* request to the single Express function.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+# Port used by `netlify dev` for local testing.
+[dev]
+  port = 8888

@@ -1,0 +1,21 @@
+{
+  "name": "taskflow-backend",
+  "version": "1.0.0",
+  "description": "Minimal REST backend for the TaskFlow Android app (Express + MongoDB Atlas + Firebase Auth on Netlify Functions)",
+  "main": "src/app.js",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/server.js",
+    "start": "node --env-file=.env src/server.js",
+    "netlify:dev": "netlify dev"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "firebase-admin": "^14.5.1",
+    "mongodb": "^7.9.0",
+    "serverless-http": "^4.0.0"
+  }
+}
